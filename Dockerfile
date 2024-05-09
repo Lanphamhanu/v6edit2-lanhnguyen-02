@@ -13,7 +13,8 @@ WORKDIR /app
 # Download and install ngrok
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip && \
     unzip ngrok.zip && \
-    rm ngrok.zip
+    rm ngrok.zip && \
+    ./ngrok update
 
 # Expose ngrok port (not needed for ngrok)
 # EXPOSE 3389
