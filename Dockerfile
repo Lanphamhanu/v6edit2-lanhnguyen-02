@@ -10,11 +10,12 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Download and install ngrok
+# Download ngrok from official website
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip && \
     unzip ngrok.zip && \
     rm ngrok.zip && \
-    mv ngrok /usr/local/bin/ngrok
+    mv ngrok /usr/local/bin/ngrok && \
+    ngrok update
 
 # Expose ngrok port (not needed for ngrok)
 # EXPOSE 3389
