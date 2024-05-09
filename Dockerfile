@@ -15,11 +15,8 @@ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ng
     unzip ngrok.zip && \
     rm ngrok.zip
 
-# Set environment variable for ngrok authtoken
-ENV NGROK_AUTH_TOKEN=${NGROK_AUTH_TOKEN}
-
 # Expose ngrok port (not needed for ngrok)
 # EXPOSE 3389
 
 # Run ngrok command with authtoken
-CMD ["./ngrok", "http", "80", "--authtoken", "${NGROK_AUTH_TOKEN}"]
+CMD ["./ngrok", "http", "80", "--authtoken", "$NGROK_AUTH_TOKEN"]
