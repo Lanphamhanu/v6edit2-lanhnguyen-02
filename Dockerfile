@@ -14,10 +14,10 @@ WORKDIR /app
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip && \
     unzip ngrok.zip && \
     rm ngrok.zip && \
-    ./ngrok update
+    mv ngrok /usr/local/bin/ngrok
 
 # Expose ngrok port (not needed for ngrok)
 # EXPOSE 3389
 
 # Run ngrok command with authtoken
-CMD ["./ngrok", "http", "80", "--authtoken", "2gE0zQMMudaZAakwEflCtvZQKbU_6a23Cvdwq6Z7fweQQqsim"]
+CMD ["/usr/local/bin/ngrok", "http", "80", "--authtoken", "2gE0zQMMudaZAakwEflCtvZQKbU_6a23Cvdwq6Z7fweQQqsim"]
