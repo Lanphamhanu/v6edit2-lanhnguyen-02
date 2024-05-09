@@ -11,15 +11,12 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Download and install ngrok
-RUN wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip -O ngrok.zip && \
+RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip && \
     unzip ngrok.zip && \
     rm ngrok.zip
 
-# Set environment variable for ngrok authtoken
-ENV NGROK_AUTH_TOKEN=${NGROK_AUTH_TOKEN}
-
-# Expose ngrok port
-EXPOSE 3389
+# Expose ngrok port (not needed for ngrok)
+# EXPOSE 3389
 
 # Run ngrok command
-CMD ["./ngrok", "tcp", "3389"]
+CMD ["./ngrok", "http", "80"]
