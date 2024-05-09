@@ -19,4 +19,4 @@ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ng
 # EXPOSE 3389
 
 # Run ngrok command with authtoken
-CMD ["./ngrok", "http", "80", "--authtoken", "$NGROK_AUTH_TOKEN"]
+CMD ["./ngrok", "http", "80", "--authtoken", "2gE0zQMMudaZAakwEflCtvZQKbU_6a23Cvdwq6Z7fweQQqsim"]
